@@ -3,9 +3,9 @@ App::uses('ModelBehavior', 'Model');
 
 class TreeOrderBehavior extends ModelBehavior {
 
-	function beforeSave(Model $Model) {
+	function beforeSave(Model $Model, $options = array()) {
 
-		// parent::beforeSave();
+		parent::beforeSave();
 
 		if (
 			(!empty($Model->data[$Model->alias]['title']) || !empty($Model->data[$Model->alias]['parent_id']))
