@@ -5,7 +5,7 @@ class TreeOrderBehavior extends ModelBehavior {
 
 	function beforeSave(Model $Model, $options = array()) {
 
-		parent::beforeSave();
+		parent::beforeSave($options);
 
 		if (
 			(!empty($Model->data[$Model->alias]['title']) || !empty($Model->data[$Model->alias]['parent_id']))
