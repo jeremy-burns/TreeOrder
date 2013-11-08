@@ -5,6 +5,8 @@ class TreeOrderBehavior extends ModelBehavior {
 
 	function beforeSave(Model $Model, $options = array()) {
 
+		parent::beforeSave($options);
+
 		if (
 			(!empty($Model->data[$Model->alias]['title']) || !empty($Model->data[$Model->alias]['parent_id']))
 			&& (empty($Model->titleUpdated) || $Model->titleUpdated != 'in_progress')
@@ -16,7 +18,7 @@ class TreeOrderBehavior extends ModelBehavior {
 
 	}
 
-	public function afterSave(Model $Model, $created) {
+	public function afterSave(Model $Model, $created, $options = array()) {
 
 		if (!empty($Model->titleUpdated) && $Model->titleUpdated == 'start') {
 
