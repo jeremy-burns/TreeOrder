@@ -3,7 +3,7 @@ App::uses('ModelBehavior', 'Model');
 
 class TreeOrderBehavior extends ModelBehavior {
 
-	function beforeSave(Model $Model) {
+	function beforeSave(Model $Model, $options = array()) {
 
 		// parent::beforeSave();
 
@@ -18,7 +18,7 @@ class TreeOrderBehavior extends ModelBehavior {
 
 	}
 
-	public function afterSave(Model $Model, $created) {
+	public function afterSave(Model $Model, $created, $options = array()) {
 
 		if (!empty($Model->titleUpdated) && $Model->titleUpdated == 'start') {
 
