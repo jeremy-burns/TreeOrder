@@ -1,5 +1,5 @@
-TreeOrder
-=============
+TreeOrder (1.0.2)
+=================
 
 A CakePHP behaviour that maintains a 'path' field that is used for ordering records in a tree based table.
 
